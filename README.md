@@ -4,8 +4,10 @@ Code used in the following paper:
 
 [B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System ," Under review, 2017.](https://arxiv.org/abs/1707.06292)
 
-### TODO:
-* Add EDPF and EDLines as submodules
+### No license granted or implied
+
+### TODO (after acceptance):
+* Add EDPF and EDLines
 * Add a makefile
 * Write Matlab and Python wrappers
 

@@ -1,16 +1,9 @@
 #ifndef ELLIPSE_H
 #define ELLIPSE_H 
 
-
-
-// I no longer delete fitPoints, as I use a vector for that!!!
-
-
-
 #include <vector>
 using std::vector;
 
-// Burak - deleted typedef
 struct pix{
 	int x;
 	int y;
