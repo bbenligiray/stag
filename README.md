@@ -11,9 +11,7 @@ The first version of the paper: https://arxiv.org/abs/1707.06292
 * Write Matlab and Python wrappers
 * Update the arxiv manuscript
 
-Click on the thumbnail below to go to the supplementary video:
-
-[![Supplementary Video](https://i.ytimg.com/vi/vnHI3GzLVrY/sddefault.jpg)](https://www.youtube.com/watch?v=vnHI3GzLVrY) 
+[![Supplementary Video](https://user-images.githubusercontent.com/19530665/57184379-6a250580-6ec3-11e9-8ab3-7e139966f13b.png)](https://www.youtube.com/watch?v=vnHI3GzLVrY) 
 
 Some figures from the paper:
 
