@@ -13,9 +13,7 @@ The first version of the paper: https://arxiv.org/abs/1707.06292
 
 Click on the thumbnail below to go to video:
 
-<p align="center">
 [![Supplementary Video](https://i.ytimg.com/vi/vnHI3GzLVrY/sddefault.jpg)](https://www.youtube.com/watch?v=vnHI3GzLVrY) 
-</p>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/19530665/57179654-c0c11e00-6e88-11e9-9ca5-0c0153b28c91.png"/>
