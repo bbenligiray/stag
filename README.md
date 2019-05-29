@@ -6,6 +6,10 @@ B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System," Im
 
 The first version of the paper: https://arxiv.org/abs/1707.06292
 
+Markers (will provide a generation script in the future):
+
+https://drive.google.com/drive/folders/0ByNTNYCAhWbIV1RqdU9vRnd2Vnc
+
 ### TODO:
 * Add a makefile
 * Write Matlab and Python wrappers
