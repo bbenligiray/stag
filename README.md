@@ -2,9 +2,7 @@
 
 Code used in the following paper:
 
-B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System," Image and Vision Computing (Under review), 2019.
-
-The first version of the paper: https://arxiv.org/abs/1707.06292
+[B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System," Image and Vision Computing (Accepted), 2019.](https://arxiv.org/abs/1707.06292)
 
 Markers (will provide a generation script in the future):
 
