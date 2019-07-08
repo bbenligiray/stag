@@ -11,7 +11,6 @@ https://drive.google.com/drive/folders/0ByNTNYCAhWbIV1RqdU9vRnd2Vnc
 ### TODO:
 * Add a makefile
 * Write Matlab and Python wrappers
-* Update the arxiv manuscript
 
 [![Supplementary Video](https://user-images.githubusercontent.com/19530665/57184379-6a250580-6ec3-11e9-8ab3-7e139966f13b.png)](https://www.youtube.com/watch?v=vnHI3GzLVrY) 
 
