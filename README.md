@@ -4,9 +4,13 @@ Code used in the following paper:
 
 [B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System," Image and Vision Computing (Accepted), 2019.](https://arxiv.org/abs/1707.06292)
 
-Markers (will provide a generation script in the future):
+Markers (see `ref/marker generator` for reference code for marker generation):
 
 https://drive.google.com/drive/folders/0ByNTNYCAhWbIV1RqdU9vRnd2Vnc
+
+### ROS Package
+
+[STag ROS: A ROS package for the Stable Fiducial Marker System](https://github.com/usrl-uofsc/stag_ros/) by Unmanned Systems & Robotics Lab - UofSC
 
 ### TODO:
 * Add a makefile
