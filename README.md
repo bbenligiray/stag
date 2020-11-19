@@ -10,11 +10,9 @@ https://drive.google.com/drive/folders/0ByNTNYCAhWbIV1RqdU9vRnd2Vnc
 
 ### ROS Package
 
-[STag ROS: A ROS package for the Stable Fiducial Marker System](https://github.com/usrl-uofsc/stag_ros/) by Unmanned Systems & Robotics Lab - UofSC
+- [STag ROS: A ROS package for the Stable Fiducial Marker System](https://github.com/usrl-uofsc/stag_ros/) by Unmanned Systems & Robotics Lab - UofSC
 
-### TODO:
-* Add a makefile
-* Write Matlab and Python wrappers
+- [ROS wrapper for STag](https://github.com/dartmouthrobotics/stag_ros) by Dartmouth Reality and Robotics Lab
 
 [![Supplementary Video](https://user-images.githubusercontent.com/19530665/57184379-6a250580-6ec3-11e9-8ab3-7e139966f13b.png)](https://www.youtube.com/watch?v=vnHI3GzLVrY) 
 
