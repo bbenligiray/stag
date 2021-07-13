@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <limits.h>
-
 #include "EDInternals.h"
+
+#include <stdlib.h>
 
 /// Special defines
 #define EDGE_VERTICAL   1

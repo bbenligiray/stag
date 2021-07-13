@@ -1,18 +1,16 @@
-//Burak - Periodical line fits addeed to SplitSegment2Lines
+#include "EDLines.h"
 
 #include <math.h>
 #include <stdio.h>
 #include <float.h>
 
-#include "EDInternals.h"
-#include "ImageSmooth.h"
-#include "GradientOperators.h"
-
 #include "ED.h"
-#include "EDLines.h"
+#include "EDInternals.h"
+#include "GradientOperators.h"
+#include "ImageSmooth.h"
 #include "LineSegment.h"
-#include "NFA.h"
 #include "MyMath.h"
+#include "NFA.h"
 #include "Timer.h"
 
 /** PI */

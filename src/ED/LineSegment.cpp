@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <math.h>
 #include "LineSegment.h"
+
+#include <math.h>
+
 
 ///------------------------------------------------------------------
 /// Rounds a double number to its closest integer part.

@@ -2,7 +2,6 @@
 #define ELLIPSE_H 
 
 #include <vector>
-using std::vector;
 
 struct pix{
 	int x;
@@ -125,9 +124,9 @@ public:
 	//overload for the double version
 	double GetClosestPointAndDistance(double testX, double testY, pix &closest);
 
-	void getEllipseSamples(int noOfSamples, vector<double> &xPoints, vector<double> &yPoints);
+	void getEllipseSamples(int noOfSamples, std::vector<double> &xPoints, std::vector<double> &yPoints);
 };
 
-bool CircleFit(const vector<double> &Xs, const vector<double> &Ys, double &centerX, double &centerY, double &radius);
+bool CircleFit(const std::vector<double> &Xs, const std::vector<double> &Ys, double &centerX, double &centerY, double &radius);
 
 #endif

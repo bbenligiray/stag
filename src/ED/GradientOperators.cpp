@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include <math.h>
-
 #include "GradientOperators.h"
 #include "GradientOperatorsCV.h"
+
+#include <stdlib.h>
+
 #include "Utilities.h"
 
 /// Special defines

@@ -4,6 +4,7 @@
 using cv::Point2d;
 using cv::Point3d;
 using cv::Mat;
+using std::vector;
 
 
 Quad::Quad(vector<Point2d> inCorners)

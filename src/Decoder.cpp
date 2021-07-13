@@ -1,8 +1,6 @@
 #include "Decoder.h"
 
-#include <fstream>
 #include <string>
-#include <sstream>
 
 using std::ifstream;
 using std::string;

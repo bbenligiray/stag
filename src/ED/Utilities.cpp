@@ -1,11 +1,6 @@
+#include "Utilities.h"
 
-
-#include <math.h>
-#include <stdio.h>
-
-#include <opencv/cv.h>
-#include <opencv/cxcore.h>
-#include <opencv/highgui.h>
+#include <opencv2/imgproc/imgproc_c.h>
 
 // Burak - commented the line below
 //#include "ImageVideoLib.h"
@@ -15,7 +10,7 @@
 #include <windows.h>
 #endif // DEBUG
 
-#include "Utilities.h"
+
 
 // Burak - suppresses _CRT_SECURE_NO_DEPRECATE warnings
 #pragma warning(disable : 4996)

@@ -6,6 +6,7 @@
 
 using cv::Mat;
 using cv::Point2d;
+using std::vector;
 
 Stag::Stag(int libraryHD, int inErrorCorrection, bool inKeepLogs)
 {
@@ -45,7 +46,7 @@ void Stag::detectMarkers(Mat inImage)
 }
 
 
-void Stag::logResults(string path)
+void Stag::logResults(std::string path)
 {
 	drawer.drawEdgeMap(path + "1 edges.png", image, edInterface.getEdgeMap());
 	drawer.drawLines(path + "2 lines.png", image, edInterface.getEDLines());

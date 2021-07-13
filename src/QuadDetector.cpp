@@ -6,6 +6,7 @@
 #include "utility.h"
 
 using cv::Point2d;
+using std::vector;
 
 
 QuadDetector::QuadDetector(bool inKeepLogs)

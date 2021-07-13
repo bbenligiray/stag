@@ -1,29 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <limits.h>
+#include "ED.h"
 
-#include <opencv/cv.h>
-#include <opencv/cxcore.h>
-#include <opencv/highgui.h>
-
-//#include "EDDLL.h"
+#include <opencv2/imgproc/imgproc_c.h>
 
 #include "EDInternals.h"
-#include "ED.h"
-#include "ImageSmooth.h"
 #include "GradientOperators.h"
+#include "ImageSmooth.h"
 #include "ValidateEdgeSegments.h"
 
-#include "Utilities.h"
 #include "Timer.h"
-
-//Burak - won't be needing this
-//#include "ImageVideoLib.h"
 
 ///----------------------------------------------------------------------------------------------
 /// Detect edges by the Edge Drawing method (ED)
-/// 
+///
+
 EdgeMap *DetectEdgesByED(unsigned char *srcImg, int width, int height, GradientOperator op, int GRADIENT_THRESH, int ANCHOR_THRESH, double smoothingSigma){
   // Check parameters for sanity
   if (GRADIENT_THRESH < 1) GRADIENT_THRESH = 1;

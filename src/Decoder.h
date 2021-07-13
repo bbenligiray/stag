@@ -1,21 +1,19 @@
 #ifndef DECODER_H
 #define DECODER_H
 
-#include <vector>
 #include <bitset>
+#include <vector>
+
 #include "MarkerIDs.h"
 
-using std::vector;
-using std::bitset;
-
-typedef bitset<48> Codeword;
+typedef std::bitset<48> Codeword;
 
 class Decoder
 {
 	int wordSize = 48;
 	int noOfCodewords;
 
-	vector<Codeword> codewords;
+	std::vector<Codeword> codewords;
 
 public:
 	Decoder(){}

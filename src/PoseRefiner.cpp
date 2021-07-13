@@ -5,6 +5,7 @@
 
 using cv::Point2d;
 using cv::Mat;
+using std::vector;
 
 Mat optEllipse;
 class Refine;
