@@ -3,6 +3,8 @@
 
 #include <vector>
 
+namespace stag {
+
 struct pix{
 	int x;
 	int y;
@@ -128,5 +130,7 @@ public:
 };
 
 bool CircleFit(const std::vector<double> &Xs, const std::vector<double> &Ys, double &centerX, double &centerY, double &radius);
+
+} // namespace stag
 
 #endif

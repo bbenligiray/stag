@@ -5,6 +5,8 @@
 
 #include "opencv2/opencv.hpp"
 
+namespace stag {
+
 class Quad
 {
 public:
@@ -22,5 +24,7 @@ public:
 	Quad(const Quad &q);
 	void estimateHomography();
 };
+
+} // namespace stag
 
 #endif

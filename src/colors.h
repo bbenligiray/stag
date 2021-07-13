@@ -5,6 +5,8 @@
 
 #include "opencv2/opencv.hpp"
 
+namespace stag {
+
 static std::vector<cv::Scalar> colors = {
 	cv::Scalar(81, 112, 215),
 	cv::Scalar(255, 0, 13),
@@ -66,5 +68,7 @@ static std::vector<cv::Scalar> colors = {
 	cv::Scalar(150, 249, 123),
 	cv::Scalar(255, 255, 194)
 };
+
+} // namespace stag
 
 #endif

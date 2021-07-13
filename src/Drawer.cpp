@@ -9,6 +9,8 @@ using cv::Point2d;
 using std::string;
 using std::vector;
 
+namespace stag {
+
 void Drawer::colorAPixel(cv::Mat& img, int x, int y, cv::Scalar color, int dotWidth)
 {
 	for (int i = y - dotWidth; i < y + dotWidth + 1; i++)
@@ -281,3 +283,5 @@ void Drawer::drawEllipses(const string& path, Mat image, const vector<Marker> &m
 	vector<int> compressionParams = { cv::IMWRITE_PNG_COMPRESSION, 0 };
 	cv::imwrite(path, bgrMat, compressionParams);
 }
+
+} // namespace stag

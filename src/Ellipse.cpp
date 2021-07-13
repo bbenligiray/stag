@@ -1,17 +1,18 @@
+#include "Ellipse.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 
-
-inline double FastSinHP(double x);
-inline double FastCosHP(double x);
-
-#include "Ellipse.h"
-
 #define pi 3.14159265
 #define BOOKSTEIN 0       // method1
 #define FPF       1       // method2
+
+namespace stag {
+
+inline double FastSinHP(double x);
+inline double FastCosHP(double x);
 
 ////////////////////////////////////////////////////
 /// INTERNAL FUNCTIONS OF THE EllipseFit - BEGIN ///
@@ -1554,3 +1555,5 @@ inline double FastCosHP(double x)
 
 	return res;
 }
+
+} // namespace stag

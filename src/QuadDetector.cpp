@@ -8,6 +8,7 @@
 using cv::Point2d;
 using std::vector;
 
+namespace stag {
 
 QuadDetector::QuadDetector(bool inKeepLogs)
 {
@@ -362,3 +363,5 @@ bool QuadDetector::checkIfTwoCornersFaceEachother(const Corner& c1, const Corner
 
 	return true;
 }
+
+} // namespace stag

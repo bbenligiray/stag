@@ -6,6 +6,8 @@
 #include "EDInterface.h"
 #include "Quad.h"
 
+namespace stag {
+
 class Corner
 {
 public:
@@ -68,5 +70,7 @@ public:
 
 	const std::vector<Quad>& getDistortedQuads() const;
 };
+
+} // namespace stag
 
 #endif

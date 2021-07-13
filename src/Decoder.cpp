@@ -5,6 +5,8 @@
 using std::ifstream;
 using std::string;
 
+namespace stag {
+
 Decoder::Decoder(int hd)
 {
 	const unsigned long long int* rawCodewords = nullptr;
@@ -67,3 +69,5 @@ bool Decoder::decode(const Codeword& c, int errCorr, int& id, int& shift)
 	}
 	return false;
 }
+
+} // namespace stag

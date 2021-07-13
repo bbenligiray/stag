@@ -8,6 +8,8 @@
 
 typedef std::bitset<48> Codeword;
 
+namespace stag {
+
 class Decoder
 {
 	int wordSize = 48;
@@ -20,5 +22,7 @@ public:
 	Decoder(int hd);
 	bool decode(const Codeword& c, int errCorr, int& id, int& shift);
 };
+
+} // namespace stag
 
 #endif

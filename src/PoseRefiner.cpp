@@ -7,6 +7,8 @@ using cv::Point2d;
 using cv::Mat;
 using std::vector;
 
+namespace stag {
+
 Mat optEllipse;
 class Refine;
 
@@ -235,3 +237,5 @@ public:
 		return std::accumulate(errors.begin(), errors.end(), (double)0);
 	}
 };
+
+} // namespace stag

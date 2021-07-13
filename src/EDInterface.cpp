@@ -9,6 +9,7 @@ using std::min;
 using cv::Point2i;
 using cv::Point2d;
 
+namespace stag {
 
 void EDInterface::runEDPFandEDLines(const cv::Mat &image)
 {
@@ -222,3 +223,5 @@ Point2d EDInterface::intersectionOfLineSegments(const LineSegment& line1, const 
 	}
 	return inters;
 }
+
+} // namespace stag

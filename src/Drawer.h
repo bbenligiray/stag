@@ -11,6 +11,8 @@
 #include "Marker.h"
 #include "QuadDetector.h"
 
+namespace stag {
+
 class Drawer
 {
 	void colorAPixel(cv::Mat& img, int x, int y, cv::Scalar color, int dotWidth);
@@ -34,5 +36,7 @@ public:
 	// draws refined markers and their ellipses
 	void drawEllipses(const std::string& path, cv::Mat image, const std::vector<Marker> &markers);
 };
+
+} // namespace stag
 
 #endif
