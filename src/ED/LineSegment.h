@@ -3,6 +3,8 @@
 
 #define NULL 0
 
+namespace edpf {
+
 struct LineSegment {
   double a, b;          // y = a + bx (if invert = 0) || x = a + by (if invert = 1)
   int invert; 
@@ -68,5 +70,7 @@ void LineFit(double *x, double *y, int count, double *a, double *b, double *e, i
 
 /// This line fit assumes that the direction of the line (invert) is known by a previous computation
 void LineFit(double *x, double *y, int count, double *a, double *b, int invert);
+
+} // namespace edpf
 
 #endif

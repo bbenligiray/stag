@@ -2,6 +2,8 @@
 
 #include <math.h>
 
+namespace edpf {
+
 #define PI 3.14159265358979323846
 
 ///----------------------------------------------
@@ -125,3 +127,5 @@ double fastsqrt (double y) {
 
 
 #undef PI
+
+} // namespace edpf

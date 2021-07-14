@@ -8,6 +8,8 @@
 using cv::Point2d;
 using std::vector;
 
+using namespace edpf;
+
 namespace stag {
 
 QuadDetector::QuadDetector(bool inKeepLogs)

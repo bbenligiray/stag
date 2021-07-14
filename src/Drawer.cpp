@@ -27,7 +27,7 @@ void Drawer::colorAPixel(cv::Mat& img, int x, int y, cv::Scalar color, int dotWi
 	}
 }
 
-void Drawer::drawEdgeMap(const string& path, Mat image, EdgeMap* edgeMap)
+void Drawer::drawEdgeMap(const string& path, Mat image, edpf::EdgeMap* edgeMap)
 {
 	Mat greyMat = image.clone();
 	Mat bgrMat;
@@ -55,7 +55,7 @@ void Drawer::drawEdgeMap(const string& path, Mat image, EdgeMap* edgeMap)
 	cv::imwrite(path, bgrMat, compressionParams);
 }
 
-void Drawer::drawLines(const string& path, Mat image, EDLines* edLines)
+void Drawer::drawLines(const string& path, Mat image, edpf::EDLines* edLines)
 {
 	Mat greyMat = image.clone();
 	Mat bgrMat;

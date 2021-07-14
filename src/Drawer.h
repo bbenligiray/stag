@@ -19,10 +19,10 @@ class Drawer
 
 public:
 	// draws edge segments
-	void drawEdgeMap(const std::string& path, cv::Mat image, EdgeMap* edgeMap);
+	void drawEdgeMap(const std::string& path, cv::Mat image, edpf::EdgeMap* edgeMap);
 
 	// draws line segments
-	void drawLines(const std::string& path, cv::Mat image, EDLines* edLines);
+	void drawLines(const std::string& path, cv::Mat image, edpf::EDLines* edLines);
 
 	// draws corners (intersections of line segments)
 	void drawCorners(const std::string& path, cv::Mat image, const std::vector<std::vector<Corner>> &cornerGroups);

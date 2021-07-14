@@ -3,6 +3,8 @@
 
 #include <memory.h>
 
+namespace edpf {
+
 enum GradientOperator {PREWITT_OPERATOR=101, SOBEL_OPERATOR=102, SCHARR_OPERATOR=103};
 
 struct Pixel {int r, c;};
@@ -76,5 +78,6 @@ public:
   } //end-clone
 };
 
+} // namespace edpf
 
 #endif

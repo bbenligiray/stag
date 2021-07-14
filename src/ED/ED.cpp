@@ -13,6 +13,8 @@
 /// Detect edges by the Edge Drawing method (ED)
 ///
 
+namespace edpf {
+
 EdgeMap *DetectEdgesByED(unsigned char *srcImg, int width, int height, GradientOperator op, int GRADIENT_THRESH, int ANCHOR_THRESH, double smoothingSigma){
   // Check parameters for sanity
   if (GRADIENT_THRESH < 1) GRADIENT_THRESH = 1;
@@ -1024,3 +1026,5 @@ EdgeMap *DetectEdgesByED10V(unsigned char *ch1Img, unsigned char *ch2Img, unsign
 
   return map;
 } //end-DetectEdgesByED10V
+
+} // namespace edpf

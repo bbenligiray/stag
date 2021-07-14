@@ -26,6 +26,8 @@
 #define DOWN_LEFT  7
 #define LEFT       8
 
+namespace edpf {
+
 struct StackNode {
   int r, c;   // starting pixel
   int parent; // parent chain (-1 if no parent)
@@ -2887,3 +2889,5 @@ EdgeMap *DoDetectEdgesByED(short *gradImg, int width, int height, int GRADIENT_T
 
   return map;
 } //end-DoDetectEdgesByED
+
+} // namespace edpf

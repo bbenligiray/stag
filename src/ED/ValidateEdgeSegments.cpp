@@ -4,6 +4,8 @@
 
 #define MAX_GRAD_VALUE 128*256
 
+namespace edpf {
+
 ///---------------------------------------------------------------------------
 /// LSD gradient map computation during segment validation
 ///
@@ -1061,5 +1063,7 @@ int ValidateEdgeSegmentsWithGradientMapMultipleDiv(EdgeMap *map, short *gradImg,
 
   return noMaps;
 } //end-ValidateEdgeSegmentsWithGradientMapMultipleDiv
+
+} // namespace edpf
 
 

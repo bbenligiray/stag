@@ -3,6 +3,8 @@
 #include <float.h>
 #include <math.h>
 
+namespace edpf {
+
 /// nfa function prototype
 double nfa(int n, int k, double p, double logNT);
 
@@ -888,3 +890,5 @@ nextPixel3:
   return nfa(count, aligned, prob, logNT) >= 0.0;
 } //end-IsLineValidFaster
 #endif
+
+} // namespace edpf

@@ -6,9 +6,9 @@
 
 #include "MarkerIDs.h"
 
-typedef std::bitset<48> Codeword;
-
 namespace stag {
+
+typedef std::bitset<48> Codeword;
 
 class Decoder
 {

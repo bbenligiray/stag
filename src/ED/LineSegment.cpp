@@ -2,6 +2,7 @@
 
 #include <math.h>
 
+namespace edpf {
 
 ///------------------------------------------------------------------
 /// Rounds a double number to its closest integer part.
@@ -678,3 +679,5 @@ void LineFit(double *x, double *y, int count, double *a, double *b, int invert){
   *a = (Sxx*Sy  - Sx*Sxy)/D;
   *b = (S  *Sxy - Sx* Sy)/D;
 } //end-LineFit
+
+} // namespace edpf

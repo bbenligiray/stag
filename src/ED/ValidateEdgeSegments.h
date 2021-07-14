@@ -3,6 +3,8 @@
 
 #include "EdgeMap.h"
 
+namespace edpf {
+
 /// Validate the edge segments using the Helmholtz principle
 void ValidateEdgeSegments(EdgeMap *map, unsigned char *srcImg, double divForTestSegment);
 
@@ -26,5 +28,7 @@ void ValidateEdgeSegmentsWithGradientMap(EdgeMap *map, short *gradImg, double di
 
 /// Use multiple div values for better results (used in contour computation)
 int ValidateEdgeSegmentsWithGradientMapMultipleDiv(EdgeMap *map, short *gradImg, unsigned char *maps[], int noMaps);
+
+} // namespace edpf
 
 #endif

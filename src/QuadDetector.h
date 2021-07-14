@@ -12,8 +12,8 @@ class Corner
 {
 public:
 	cv::Point2d loc;
-	LineSegment l1, l2;
-	Corner(cv::Point2d inLoc, LineSegment inL1, LineSegment inL2)
+	edpf::LineSegment l1, l2;
+	Corner(cv::Point2d inLoc, edpf::LineSegment inL1, edpf::LineSegment inL2)
 	{
 		loc = inLoc;
 		l1 = inL1;

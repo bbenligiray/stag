@@ -26,6 +26,7 @@
 #define TRUE 1
 #endif /* !TRUE */
 
+namespace edpf {
 
 /// Goes over the original line segments and joins collinear lines that belong to the same segment
 void JoinCollinearLines(EDLines *lines, double MAX_DISTANCE_BETWEEN_TWO_LINES=6.0, double MAX_ERROR=1.5);
@@ -843,3 +844,5 @@ EDLines *DetectLinesByEDPF(EdgeMap*& map, unsigned char *srcImg, int width, int 
   // delete map;
   return lines;
 } //end-DetectLinesByEDPF
+
+} // namespace edpf

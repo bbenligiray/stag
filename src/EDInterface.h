@@ -9,22 +9,22 @@
 namespace stag {
 
 class EDInterface {
-  EdgeMap* edgeMap = NULL;
-  EDLines* edLines = NULL;
+  edpf::EdgeMap* edgeMap = NULL;
+  edpf::EDLines* edLines = NULL;
 
 public:
   // runs EDPF and EDLines, keeps the results in memory
   void runEDPFandEDLines(const cv::Mat& image);
 
-  EdgeMap* getEdgeMap();
+  edpf::EdgeMap* getEdgeMap();
 
-  EDLines* getEDLines();
+  edpf::EDLines* getEDLines();
 
   // ensures that when going from the start to end of a line segment, right-hand side is darker
-  void correctLineDirection(const cv::Mat& image, LineSegment& ls);
+  void correctLineDirection(const cv::Mat& image, edpf::LineSegment& ls);
 
   // calculates the intersection of two line segments
-  cv::Point2d intersectionOfLineSegments(const LineSegment& line1, const LineSegment& line2);
+  cv::Point2d intersectionOfLineSegments(const edpf::LineSegment& line1, const edpf::LineSegment& line2);
 };
 
 } // namespace stag

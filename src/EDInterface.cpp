@@ -9,6 +9,8 @@ using std::min;
 using cv::Point2i;
 using cv::Point2d;
 
+using namespace edpf;
+
 namespace stag {
 
 void EDInterface::runEDPFandEDLines(const cv::Mat &image)
