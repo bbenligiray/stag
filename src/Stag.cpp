@@ -244,4 +244,8 @@ Mat Stag::createMatFromPolarCoords(double radius, double radians, double circleR
   return point;
 }
 
+const std::vector<Marker>& Stag::getMarkers() {
+  return markers;
+}
+
 } // namespace stag
