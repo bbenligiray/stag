@@ -1065,5 +1065,3 @@ int ValidateEdgeSegmentsWithGradientMapMultipleDiv(EdgeMap *map, short *gradImg,
 } //end-ValidateEdgeSegmentsWithGradientMapMultipleDiv
 
 } // namespace edpf
-
-

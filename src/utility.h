@@ -1,7 +1,7 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
-#include "opencv2/opencv.hpp"
+#include <opencv2/opencv.hpp>
 
 namespace stag {
 

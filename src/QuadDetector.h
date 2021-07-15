@@ -1,7 +1,7 @@
 #ifndef QUADDETECTOR_H
 #define QUADDETECTOR_H
 
-#include "opencv2/opencv.hpp"
+#include <opencv2/opencv.hpp>
 
 #include "EDInterface.h"
 #include "Quad.h"

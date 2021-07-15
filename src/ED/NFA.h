@@ -33,4 +33,3 @@ bool checkValidationByNFA(int n, int k, NFALUT *lut);
 } // namespace edpf
 
 #endif
-

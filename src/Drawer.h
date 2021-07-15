@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "opencv2/opencv.hpp"
+#include <opencv2/opencv.hpp>
 
 #include "ED/EDLines.h"
 #include "ED/EdgeMap.h"

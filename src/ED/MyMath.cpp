@@ -109,7 +109,7 @@ double fastsqrt (double y) {
 	tempf = y;
 	*tfptr = (0xbfcdd90a - *tfptr)>>1; /* estimate of 1/sqrt(y) */
 	x =  tempf;
-	z =  y*0.5;                        /* hoist out the �/2�    */
+	z =  y*0.5;
 	x = (1.5*x) - (x*x)*(x*z);         /* iteration formula     */
 	x = (1.5*x) - (x*x)*(x*z);
 	x = (1.5*x) - (x*x)*(x*z);
