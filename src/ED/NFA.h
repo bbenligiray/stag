@@ -1,6 +1,8 @@
 #ifndef NFA_H
 #define NFA_H
 
+namespace edpf {
+
 ///-----------------------------------------------
 /// Lookup table (LUT) for NFA computation
 ///
@@ -28,5 +30,6 @@ public:
 bool checkValidationByNFA(int n, int k, double prob, double logNT);
 bool checkValidationByNFA(int n, int k, NFALUT *lut);
 
-#endif
+} // namespace edpf
 
+#endif

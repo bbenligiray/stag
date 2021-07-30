@@ -1,6 +1,10 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#include <chrono>
+
+namespace edpf {
+
 #define BUILD_MACOS
 
 #ifndef BUILD_MACOS
@@ -35,11 +39,6 @@ public:
 };
 #else
 
-#include <chrono>
-#include <ctime>
-#include <sys/_types/_int64_t.h>
-#include <sys/_types/_timespec.h>
-
 class Timer {
 private:
   std::chrono::steady_clock::time_point testTime_t1, testTime_t2;
@@ -67,5 +66,7 @@ public:
 };
 
 #endif // !1
+
+} // namespace edpf
 
 #endif

@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include <math.h>
-
 #include "GradientOperators.h"
 #include "GradientOperatorsCV.h"
+
+#include <stdlib.h>
+
 #include "Utilities.h"
 
 /// Special defines
@@ -14,6 +14,8 @@
 /// How to compute the gradient values
 #define USE_GX_GY_PLUS 1  // compute the gradient by G = Gx+Gy
 //#define USE_GX_GY_SQRT 1  // compute the gradient by G = sqrt(Gx*Gx+Gy*Gy)
+
+namespace edpf {
 
 ///---------------------------------------------------------
 /// LSD Operator
@@ -1434,3 +1436,5 @@ void ComputeGradientMapByDiZenzo5x5(unsigned char *smoothCh1Img, unsigned char *
   double scale = 255.0/max;
   for (int i=0; i<width*height; i++) gradImg[i] = (short)(gradImg[i]*scale);
 } //end-ComputeGradientMapByDiZenzo5x5
+
+} // namespace edpf

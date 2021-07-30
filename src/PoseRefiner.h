@@ -1,9 +1,12 @@
 #ifndef POSEREFINER_H
 #define POSEREFINER_H
 
+#include <opencv2/opencv.hpp>
+
 #include "EDInterface.h"
 #include "Marker.h"
-#include "EDInterface.h"
+
+namespace stag {
 
 class PoseRefiner
 {
@@ -12,5 +15,7 @@ class PoseRefiner
 public:
 	void refineMarkerPose(EDInterface* edInterface, Marker& marker);
 };
+
+} // namespace stag
 
 #endif

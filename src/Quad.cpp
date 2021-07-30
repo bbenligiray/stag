@@ -4,7 +4,9 @@
 using cv::Point2d;
 using cv::Point3d;
 using cv::Mat;
+using std::vector;
 
+namespace stag {
 
 Quad::Quad(vector<Point2d> inCorners)
 {
@@ -151,3 +153,5 @@ Quad::Quad(const Quad &q)
 	H = q.H.clone();
 	center = q.center;
 }
+
+} // namespace stag

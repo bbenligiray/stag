@@ -1,11 +1,11 @@
 #include "Decoder.h"
 
-#include <fstream>
 #include <string>
-#include <sstream>
 
 using std::ifstream;
 using std::string;
+
+namespace stag {
 
 Decoder::Decoder(int hd)
 {
@@ -69,3 +69,5 @@ bool Decoder::decode(const Codeword& c, int errCorr, int& id, int& shift)
 	}
 	return false;
 }
+
+} // namespace stag

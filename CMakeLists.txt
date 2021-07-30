@@ -1,4 +1,4 @@
-
+cmake_minimum_required(VERSION 3.13)
 project(Stag)
 
 IF(NOT CMAKE_BUILD_TYPE)
@@ -28,23 +28,14 @@ include_directories(
     src/
     src/ED/
 )
+
 add_library(
-    LibStag SHARED
+    stag_markers SHARED
     ${SRC_FILE1}
     ${SRC_FILE2}
 )
+
 target_link_libraries(
-    LibStag
+    stag_markers PRIVATE
     ${OpenCV_LIBS}
-)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/app)
-
-add_executable(
-    testrun
-    main.cpp
-)
-
-target_link_libraries(
-    testrun
-    LibStag
 )

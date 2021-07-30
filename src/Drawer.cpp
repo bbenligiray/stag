@@ -1,8 +1,15 @@
 #include "Drawer.h"
+
+#include <opencv2/imgproc/imgproc_c.h>
+
 #include "colors.h"
 
 using cv::Mat;
 using cv::Point2d;
+using std::string;
+using std::vector;
+
+namespace stag {
 
 void Drawer::colorAPixel(cv::Mat& img, int x, int y, cv::Scalar color, int dotWidth)
 {
@@ -20,7 +27,7 @@ void Drawer::colorAPixel(cv::Mat& img, int x, int y, cv::Scalar color, int dotWi
 	}
 }
 
-void Drawer::drawEdgeMap(const string& path, Mat image, EdgeMap* edgeMap)
+void Drawer::drawEdgeMap(const string& path, Mat image, edpf::EdgeMap* edgeMap)
 {
 	Mat greyMat = image.clone();
 	Mat bgrMat;
@@ -44,11 +51,11 @@ void Drawer::drawEdgeMap(const string& path, Mat image, EdgeMap* edgeMap)
 			colorAPixel(bgrMat, edgeMap->segments[i].pixels[j].c, edgeMap->segments[i].pixels[j].r, colors[i % colors.size()], dotWidth);
 		}
 	}
-	vector<int> compressionParams = { CV_IMWRITE_PNG_COMPRESSION, 0 };
+	vector<int> compressionParams = { cv::IMWRITE_PNG_COMPRESSION, 0 };
 	cv::imwrite(path, bgrMat, compressionParams);
 }
 
-void Drawer::drawLines(const string& path, Mat image, EDLines* edLines)
+void Drawer::drawLines(const string& path, Mat image, edpf::EDLines* edLines)
 {
 	Mat greyMat = image.clone();
 	Mat bgrMat;
@@ -63,7 +70,7 @@ void Drawer::drawLines(const string& path, Mat image, EDLines* edLines)
 		cv::line(bgrMat, cv::Point(edLines->lines[i].sx, edLines->lines[i].sy), cv::Point(edLines->lines[i].ex, edLines->lines[i].ey), cv::Scalar(255,255,255), 3, CV_AA);
 		cv::line(bgrMat, cv::Point(edLines->lines[i].sx, edLines->lines[i].sy), cv::Point(edLines->lines[i].ex, edLines->lines[i].ey), colors[i % colors.size()], 2, CV_AA);
 	}
-	vector<int> compressionParams = { CV_IMWRITE_PNG_COMPRESSION, 0 };
+	vector<int> compressionParams = { cv::IMWRITE_PNG_COMPRESSION, 0 };
 	cv::imwrite(path, bgrMat, compressionParams);
 }
 
@@ -82,7 +89,7 @@ void Drawer::drawCorners(const string& path, Mat image, const vector<vector<Corn
 			cv::circle(bgrMat, cv::Point(cornerGroups[i][j].loc.x, cornerGroups[i][j].loc.y), 3, colors[i % colors.size()], -1, CV_AA);
 		}
 	}
-	vector<int> compressionParams = { CV_IMWRITE_PNG_COMPRESSION, 0 };
+	vector<int> compressionParams = { cv::IMWRITE_PNG_COMPRESSION, 0 };
 	cv::imwrite(path, bgrMat, compressionParams);
 }
 
@@ -106,7 +113,7 @@ void Drawer::drawQuads(const string& path, Mat image, const vector<Quad> &quads)
 			cv::line(bgrMat, cv::Point(corners[j].x, corners[j].y), cv::Point(corners[(j + 1) % 4].x, corners[(j + 1) % 4].y), cv::Scalar(50, 255, 50), 2, CV_AA);
 
 			}
-	vector<int> compressionParams = { CV_IMWRITE_PNG_COMPRESSION, 0 };
+	vector<int> compressionParams = { cv::IMWRITE_PNG_COMPRESSION, 0 };
 	cv::imwrite(path, bgrMat, compressionParams);
 }
 
@@ -136,7 +143,7 @@ void Drawer::drawMarkers(const string& path, Mat image, const vector<Marker> &ma
 		cv::putText(bgrMat, std::to_string(markers[i].id), center, cv::FONT_HERSHEY_DUPLEX, 2, cv::Scalar(255, 255, 255), 5, CV_AA);
 		cv::putText(bgrMat, std::to_string(markers[i].id), center, cv::FONT_HERSHEY_DUPLEX, 2, cv::Scalar(50, 50, 255), 2, CV_AA);
 	}
-	vector<int> compressionParams = { CV_IMWRITE_PNG_COMPRESSION, 0 };
+	vector<int> compressionParams = { cv::IMWRITE_PNG_COMPRESSION, 0 };
 	cv::imwrite(path, bgrMat, compressionParams);
 }
 
@@ -273,6 +280,8 @@ void Drawer::drawEllipses(const string& path, Mat image, const vector<Marker> &m
 		}
 		
 	}
-	vector<int> compressionParams = { CV_IMWRITE_PNG_COMPRESSION, 0 };
+	vector<int> compressionParams = { cv::IMWRITE_PNG_COMPRESSION, 0 };
 	cv::imwrite(path, bgrMat, compressionParams);
 }
+
+} // namespace stag

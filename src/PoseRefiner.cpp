@@ -5,6 +5,9 @@
 
 using cv::Point2d;
 using cv::Mat;
+using std::vector;
+
+namespace stag {
 
 Mat optEllipse;
 class Refine;
@@ -23,7 +26,7 @@ void PoseRefiner::refineMarkerPose(EDInterface* edInterface, Marker& marker)
 		samplePoints[i] = Point2d(0.5 + 0.4 * sinVals[(i + 9) % 36], 0.5 + 0.4 * sinVals[i]);
 
 	// find the edge segment loop that is most likely to belong to the ellipse
-	EdgeMap* edgeMap = edInterface->getEdgeMap();
+	edpf::EdgeMap* edgeMap = edInterface->getEdgeMap();
 	int indChosenSegment = -1;
 	double minAccError = INFINITY;
 
@@ -234,3 +237,5 @@ public:
 		return std::accumulate(errors.begin(), errors.end(), (double)0);
 	}
 };
+
+} // namespace stag

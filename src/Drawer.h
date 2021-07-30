@@ -2,15 +2,16 @@
 #define DRAWER_H
 
 #include <string>
-#include "opencv2/opencv.hpp"
+#include <vector>
+
+#include <opencv2/opencv.hpp>
 
 #include "ED/EDLines.h"
 #include "ED/EdgeMap.h"
-#include "QuadDetector.h"
 #include "Marker.h"
+#include "QuadDetector.h"
 
-using std::string;
-
+namespace stag {
 
 class Drawer
 {
@@ -18,22 +19,24 @@ class Drawer
 
 public:
 	// draws edge segments
-	void drawEdgeMap(const string& path, cv::Mat image, EdgeMap* edgeMap);
+	void drawEdgeMap(const std::string& path, cv::Mat image, edpf::EdgeMap* edgeMap);
 
 	// draws line segments
-	void drawLines(const string& path, cv::Mat image, EDLines* edLines);
+	void drawLines(const std::string& path, cv::Mat image, edpf::EDLines* edLines);
 
 	// draws corners (intersections of line segments)
-	void drawCorners(const string& path, cv::Mat image, const vector<vector<Corner>> &cornerGroups);
+	void drawCorners(const std::string& path, cv::Mat image, const std::vector<std::vector<Corner>> &cornerGroups);
 
 	// draws quads
-	void drawQuads(const string& path, cv::Mat image, const vector<Quad> &quads);
+	void drawQuads(const std::string& path, cv::Mat image, const std::vector<Quad> &quads);
 
 	// draws markers
-	void drawMarkers(const string& path, cv::Mat image, const vector<Marker> &markers);
+	void drawMarkers(const std::string& path, cv::Mat image, const std::vector<Marker> &markers);
 
 	// draws refined markers and their ellipses
-	void drawEllipses(const string& path, cv::Mat image, const vector<Marker> &markers);
+	void drawEllipses(const std::string& path, cv::Mat image, const std::vector<Marker> &markers);
 };
+
+} // namespace stag
 
 #endif

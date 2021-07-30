@@ -1,18 +1,16 @@
-//Burak - Periodical line fits addeed to SplitSegment2Lines
+#include "EDLines.h"
 
 #include <math.h>
 #include <stdio.h>
 #include <float.h>
 
-#include "EDInternals.h"
-#include "ImageSmooth.h"
-#include "GradientOperators.h"
-
 #include "ED.h"
-#include "EDLines.h"
+#include "EDInternals.h"
+#include "GradientOperators.h"
+#include "ImageSmooth.h"
 #include "LineSegment.h"
-#include "NFA.h"
 #include "MyMath.h"
+#include "NFA.h"
 #include "Timer.h"
 
 /** PI */
@@ -28,6 +26,7 @@
 #define TRUE 1
 #endif /* !TRUE */
 
+namespace edpf {
 
 /// Goes over the original line segments and joins collinear lines that belong to the same segment
 void JoinCollinearLines(EDLines *lines, double MAX_DISTANCE_BETWEEN_TWO_LINES=6.0, double MAX_ERROR=1.5);
@@ -845,3 +844,5 @@ EDLines *DetectLinesByEDPF(EdgeMap*& map, unsigned char *srcImg, int width, int 
   // delete map;
   return lines;
 } //end-DetectLinesByEDPF
+
+} // namespace edpf

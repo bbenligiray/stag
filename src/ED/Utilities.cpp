@@ -1,11 +1,6 @@
+#include "Utilities.h"
 
-
-#include <math.h>
-#include <stdio.h>
-
-#include <opencv/cv.h>
-#include <opencv/cxcore.h>
-#include <opencv/highgui.h>
+#include <opencv2/imgproc/imgproc_c.h>
 
 // Burak - commented the line below
 //#include "ImageVideoLib.h"
@@ -15,7 +10,7 @@
 #include <windows.h>
 #endif // DEBUG
 
-#include "Utilities.h"
+
 
 // Burak - suppresses _CRT_SECURE_NO_DEPRECATE warnings
 #pragma warning(disable : 4996)
@@ -64,6 +59,9 @@ CIE-a* = 500 * ( var_X - var_Y )
 CIE-b* = 200 * ( var_Y - var_Z )
 
 */
+
+namespace edpf {
+
 void MyRGB2Lab(unsigned char *redImg, unsigned char *greenImg,
                unsigned char *blueImg, unsigned char *LImg, unsigned char *aImg,
                unsigned char *bImg, int width, int height) {
@@ -1650,6 +1648,9 @@ void StdRGB2LabOne(unsigned char r, unsigned char g, unsigned char bl,
   *a = 500 * (x - y);
   *b = 200 * (y - z);
 } // end-StdRGB2LabOne
+
+} // namespace edpf
+
 #endif
 
 // Burak - restores _CRT_SECURE_NO_DEPRECATE warnings

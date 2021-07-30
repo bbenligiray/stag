@@ -1,9 +1,9 @@
-#include <stdlib.h>
-#include <opencv/cv.h>
-#include <opencv/cxcore.h>
-
 #include "ImageSmooth.h"
 #include "ImageSmoothCV.h"
+
+#include <opencv2/imgproc/imgproc_c.h>
+
+namespace edpf {
 
 ///----------------------------------------------------------
 /// Copy from our buffer to Ipl image buffer taking care of the alignment
@@ -154,4 +154,4 @@ static void GaussFilter(unsigned char *src, unsigned char *dst, int width, int h
 #endif
 } //end-GaussFilter
 
-
+} // namespace edpf

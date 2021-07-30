@@ -1,17 +1,18 @@
+#include "Ellipse.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 
-
-inline double FastSinHP(double x);
-inline double FastCosHP(double x);
-
-#include "Ellipse.h"
-
 #define pi 3.14159265
 #define BOOKSTEIN 0       // method1
 #define FPF       1       // method2
+
+namespace stag {
+
+inline double FastSinHP(double x);
+inline double FastCosHP(double x);
 
 ////////////////////////////////////////////////////
 /// INTERNAL FUNCTIONS OF THE EllipseFit - BEGIN ///
@@ -1357,7 +1358,7 @@ double customEllipse::GetClosestPointAndDistance(double testX, double testY, pix
 /// The circle equation is of the form: (x-xc)^2 + (y-yc)^2 = r^2
 /// Returns true if there is a fit, false in case no circles can be fit
 ///
-bool CircleFit(const vector<double> &Xs, const vector<double> &Ys, double &centerX, double &centerY, double &radius)
+bool CircleFit(const std::vector<double> &Xs, const std::vector<double> &Ys, double &centerX, double &centerY, double &radius)
 {
 	int N = Xs.size();
 
@@ -1443,10 +1444,10 @@ bool CircleFit(const vector<double> &Xs, const vector<double> &Ys, double &cente
 	return true;
 } //end-CircleFit
 
-void customEllipse::getEllipseSamples(int noOfSamples, vector<double> &xPoints, vector<double> &yPoints)
+void customEllipse::getEllipseSamples(int noOfSamples, std::vector<double> &xPoints, std::vector<double> &yPoints)
 {
-	xPoints = vector<double>(noOfSamples);
-	yPoints = vector<double>(noOfSamples);
+	xPoints = std::vector<double>(noOfSamples);
+	yPoints = std::vector<double>(noOfSamples);
 
 
 	double angleStep = (double)360 / noOfSamples;
@@ -1554,3 +1555,5 @@ inline double FastCosHP(double x)
 
 	return res;
 }
+
+} // namespace stag

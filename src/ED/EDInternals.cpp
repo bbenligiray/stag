@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <limits.h>
-
 #include "EDInternals.h"
+
+#include <stdlib.h>
 
 /// Special defines
 #define EDGE_VERTICAL   1
@@ -28,6 +25,8 @@
 #define DOWN       6
 #define DOWN_LEFT  7
 #define LEFT       8
+
+namespace edpf {
 
 struct StackNode {
   int r, c;   // starting pixel
@@ -2890,3 +2889,5 @@ EdgeMap *DoDetectEdgesByED(short *gradImg, int width, int height, int GRADIENT_T
 
   return map;
 } //end-DoDetectEdgesByED
+
+} // namespace edpf

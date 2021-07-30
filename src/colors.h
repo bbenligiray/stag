@@ -1,11 +1,13 @@
 #ifndef COLORS_H
 #define COLORS_H
+
 #include <vector>
-#include "opencv2/opencv.hpp"
 
-using std::vector;
+#include <opencv2/opencv.hpp>
 
-static vector<cv::Scalar> colors = {
+namespace stag {
+
+static std::vector<cv::Scalar> colors = {
 	cv::Scalar(81, 112, 215),
 	cv::Scalar(255, 0, 13),
 	cv::Scalar(154, 14, 234),
@@ -66,5 +68,7 @@ static vector<cv::Scalar> colors = {
 	cv::Scalar(150, 249, 123),
 	cv::Scalar(255, 255, 194)
 };
+
+} // namespace stag
 
 #endif

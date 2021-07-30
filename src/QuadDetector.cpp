@@ -1,12 +1,17 @@
 #include <vector>
 #include <algorithm>
-#include "opencv2/opencv.hpp"
+
+#include <opencv2/opencv.hpp>
 
 #include "QuadDetector.h"
 #include "utility.h"
 
 using cv::Point2d;
+using std::vector;
 
+using namespace edpf;
+
+namespace stag {
 
 QuadDetector::QuadDetector(bool inKeepLogs)
 {
@@ -361,3 +366,5 @@ bool QuadDetector::checkIfTwoCornersFaceEachother(const Corner& c1, const Corner
 
 	return true;
 }
+
+} // namespace stag
