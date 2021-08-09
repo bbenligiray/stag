@@ -1,5 +1,6 @@
 #include "ValidateEdgeSegments.h"
 
+#include <math.h>
 #include <stdlib.h>
 
 #define MAX_GRAD_VALUE 128*256

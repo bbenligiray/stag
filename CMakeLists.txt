@@ -23,19 +23,19 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 file(GLOB SRC_FILE1 "src/*.c*")
 file(GLOB SRC_FILE2 "src/ED/*.c*")
 
-include_directories(
-    ${OpenCV_INCLUDE_DIRS}
-    src/
-    src/ED/
-)
-
 add_library(
     stag_markers SHARED
     ${SRC_FILE1}
     ${SRC_FILE2}
 )
 
-target_link_libraries(
-    stag_markers PRIVATE
-    ${OpenCV_LIBS}
+target_include_directories(stag_markers
+    PRIVATE src/
+    PRIVATE src/ED/
+    PUBLIC include/
+    PUBLIC ${OpenCV_INCLUDE_DIRS}
+)
+
+target_link_libraries(stag_markers
+    PRIVATE ${OpenCV_LIBS}
 )
