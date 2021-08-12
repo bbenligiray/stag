@@ -7,15 +7,22 @@ ENDIF()
 
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall -w  ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -w ")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "Forcing C++17 standard in all targets")
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON CACHE BOOL "Forcing C11 standard in all targets")
 
-# Check C++11 or C++0x support
-include(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+if(MSVC)
+  add_compile_options(/WX)
+  add_compile_options(
+    "$<$<CONFIG:RELEASE>:/MD>"
+    "$<$<CONFIG:DEBUG>:/MDd>"
+  )
+  set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+else()
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall -w  ")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -w ")
+endif()
 
 find_package(OpenCV REQUIRED)
 
@@ -39,3 +46,7 @@ target_include_directories(stag_markers
 target_link_libraries(stag_markers
     PRIVATE ${OpenCV_LIBS}
 )
+
+if(MSVC)
+  target_compile_options(stag_markers PRIVATE /wd4018 /wd4244 /wd4267)
+endif()

@@ -14,6 +14,8 @@
 ///
 
 namespace edpf {
+	
+void JoinAnchorPointsUsingSortedAnchors(short *gradImg, unsigned char *dirImg, EdgeMap *map, int GRADIENT_THRESH, int MIN_PATH_LEN);
 
 EdgeMap *DetectEdgesByED(unsigned char *srcImg, int width, int height, GradientOperator op, int GRADIENT_THRESH, int ANCHOR_THRESH, double smoothingSigma){
   // Check parameters for sanity
@@ -214,7 +216,6 @@ EdgeMap *DetectEdgesByCannySR(unsigned char *srcImg, int width, int height, int 
     } //end-for
   } //end-for
 
-  void JoinAnchorPointsUsingSortedAnchors(short *gradImg, unsigned char *dirImg, EdgeMap *map, int GRADIENT_THRESH, int MIN_PATH_LEN);
   JoinAnchorPointsUsingSortedAnchors(gradImg, dirImg, map, 1, 10);
 
   delete smoothImg;
@@ -633,7 +634,6 @@ EdgeMap *DetectContourEdgeMapByED3(unsigned char *srcImg, unsigned char *contour
 
 //  DumpGradImage("OutputImages/gradImgBW.pgm", gradImg, width, height, 1);
 
-  void JoinAnchorPointsUsingSortedAnchors(short *gradImg, unsigned char *dirImg, EdgeMap *map, int GRADIENT_THRESH, int MIN_PATH_LEN);
   JoinAnchorPointsUsingSortedAnchors(gradImg, dirImg, map, 1, 10);
 
   // Clean up

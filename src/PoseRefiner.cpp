@@ -10,7 +10,43 @@ using std::vector;
 namespace stag {
 
 Mat optEllipse;
-class Refine;
+
+class Refine :public cv::MinProblemSolver::Function{
+public:
+	int getDims() const { return 9; }
+	double calc(const double* x)const{
+		Mat H, HT, Hi;
+		H = Mat(3, 3, CV_64FC1);
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+				H.at<double>(i, j) = x[i + j * 3];
+		}
+		cv::transpose(H, HT);
+		Hi = H.inv();
+
+		// project the detected ellipse using the current homography matrix
+		Mat projCircle = HT * optEllipse * H;
+
+		vector<double> projEllipseCoeff(6);
+		projEllipseCoeff[0] = projCircle.at<double>(0, 0);
+		projEllipseCoeff[1] = -projCircle.at<double>(0, 1) * 2;
+		projEllipseCoeff[2] = projCircle.at<double>(1, 1);
+		projEllipseCoeff[3] = projCircle.at<double>(0, 2) * 2;
+		projEllipseCoeff[4] = -projCircle.at<double>(1, 2) * 2;
+		projEllipseCoeff[5] = projCircle.at<double>(2, 2);
+
+		// construct the ellipse using coefficients (to calculate semi major/minor axes)
+		customEllipse projEllipse(projEllipseCoeff.data());
+
+		vector<double> errors;
+		errors.push_back(abs(projEllipse.GetSemiMajorAxis() - 0.4));
+		errors.push_back(abs(projEllipse.GetSemiMinorAxis() - 0.4));
+		errors.push_back(abs(projEllipse.GetCenterX() - 0.5));
+		errors.push_back(abs(projEllipse.GetCenterY() - 0.5));
+		return std::accumulate(errors.begin(), errors.end(), (double)0);
+	}
+};
 
 
 void PoseRefiner::refineMarkerPose(EDInterface* edInterface, Marker& marker)
@@ -199,43 +235,5 @@ bool PoseRefiner::checkIfPointInQuad(const Marker& marker, const Point2d& p)
 
 	return true;
 }
-
-
-class Refine :public cv::MinProblemSolver::Function{
-public:
-	int getDims() const { return 9; }
-	double calc(const double* x)const{
-		Mat H, HT, Hi;
-		H = Mat(3, 3, CV_64FC1);
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-				H.at<double>(i, j) = x[i + j * 3];
-		}
-		cv::transpose(H, HT);
-		Hi = H.inv();
-
-		// project the detected ellipse using the current homography matrix
-		Mat projCircle = HT * optEllipse * H;
-
-		vector<double> projEllipseCoeff(6);
-		projEllipseCoeff[0] = projCircle.at<double>(0, 0);
-		projEllipseCoeff[1] = -projCircle.at<double>(0, 1) * 2;
-		projEllipseCoeff[2] = projCircle.at<double>(1, 1);
-		projEllipseCoeff[3] = projCircle.at<double>(0, 2) * 2;
-		projEllipseCoeff[4] = -projCircle.at<double>(1, 2) * 2;
-		projEllipseCoeff[5] = projCircle.at<double>(2, 2);
-
-		// construct the ellipse using coefficients (to calculate semi major/minor axes)
-		customEllipse projEllipse(projEllipseCoeff.data());
-
-		vector<double> errors;
-		errors.push_back(abs(projEllipse.GetSemiMajorAxis() - 0.4));
-		errors.push_back(abs(projEllipse.GetSemiMinorAxis() - 0.4));
-		errors.push_back(abs(projEllipse.GetCenterX() - 0.5));
-		errors.push_back(abs(projEllipse.GetCenterY() - 0.5));
-		return std::accumulate(errors.begin(), errors.end(), (double)0);
-	}
-};
 
 } // namespace stag

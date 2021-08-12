@@ -27,6 +27,8 @@
 #endif /* !TRUE */
 
 namespace edpf {
+	
+bool ValidateLineSegmentRect(unsigned char *srcImg, int width, int height, int *x, int *y, LineSegment *ls, NFALUT *LUT);
 
 /// Goes over the original line segments and joins collinear lines that belong to the same segment
 void JoinCollinearLines(EDLines *lines, double MAX_DISTANCE_BETWEEN_TWO_LINES=6.0, double MAX_ERROR=1.5);
@@ -229,7 +231,6 @@ void SplitSegment2Lines(double *x, double *y, int noPixels, int segmentNo, EDLin
 /// This code checks the directions of ONLY the pixels on the line
 ///
 void ValidateLineSegments(EdgeMap *map, unsigned char *srcImg, EDLines *lines, EDLines *invalidLines){
-  bool ValidateLineSegmentRect(unsigned char *srcImg, int width, int height, int *x, int *y, LineSegment *ls, NFALUT *LUT);
   Timer timer;
 
   int width = map->width;
