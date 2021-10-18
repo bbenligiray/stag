@@ -6,7 +6,7 @@ Code used in the following paper:
 
 Markers (see `ref/marker generator` for reference code for marker generation):
 
-https://drive.google.com/drive/folders/0ByNTNYCAhWbIV1RqdU9vRnd2Vnc
+https://drive.google.com/drive/folders/0ByNTNYCAhWbIV1RqdU9vRnd2Vnc?resourcekey=0-9ipvecbezW8EWUva5GBQTQ&usp=sharing
 
 ### ROS Package
 
