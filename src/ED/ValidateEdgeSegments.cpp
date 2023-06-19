@@ -51,7 +51,7 @@ static short *ComputeLSD(unsigned char *srcImg, int width, int height, double *H
   for (int i=maxGradValue-1; i>0; i--) grads[i-1] += grads[i];
   for (int i=0; i<maxGradValue; i++) H[i] = (double)grads[i]/((double)size);
 
-  delete grads;
+  delete[] grads;
   return gradImg;
 } //end-ComputeLSD
 
@@ -100,7 +100,7 @@ static short *ComputePrewitt3x3(unsigned char *srcImg, int width, int height, do
   for (int i=maxGradValue-1; i>0; i--) grads[i-1] += grads[i];
   for (int i=0; i<maxGradValue; i++) H[i] = (double)grads[i]/((double)size);
 
-  delete grads;
+  delete[] grads;
   return gradImg;
 } //end-ComputePrewitt3x3
 
@@ -369,8 +369,8 @@ void ValidateEdgeSegments(EdgeMap *map, unsigned char *srcImg, double divForTest
   /// Extract the new edge segments after validation
   ExtractNewSegments(map);
 
-  delete H;
-  delete gradImg;
+  delete[] H;
+  delete[] gradImg;
 } //end-ValidateEdgeSegments
 
 ///----------------------------------------------------------------------------------

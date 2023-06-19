@@ -347,8 +347,8 @@ void ValidateLineSegments(EdgeMap *map, unsigned char *srcImg, EDLines *lines, E
 
   delete LUT;
 
-  delete x;
-  delete y;
+  delete[] x;
+  delete[] y;
 
   timer.Stop();
   lines->lineValidationTime = timer.ElapsedTime();
