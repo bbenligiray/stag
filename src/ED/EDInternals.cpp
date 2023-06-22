@@ -163,7 +163,7 @@ static int *SortAnchorsByGradValue(short *gradImg, EdgeMap *map, int *pNoAnchors
     } //end-for
   } //end-for  
 
-  delete C;
+  delete[] C;
 
   *pNoAnchors = noAnchors;
   return A;
@@ -1283,11 +1283,11 @@ StartOfWhile:
 
   map->noSegments = noSegments;
 
-  delete A;
-  delete chains;
-  delete stack;
-  delete pixels;
-  delete chainNos;
+  delete[] A;
+  delete[] chains;
+  delete[] stack;
+  delete[] pixels;
+  delete[] chainNos;
 } //end-JoinAnchorPointsUsingSortedAnchors
 
 ///-----------------------------------------------------------------------------------
