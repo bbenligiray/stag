@@ -2,7 +2,7 @@
 
 Code used in the following paper:
 
-[B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System," Image and Vision Computing (Accepted), 2019.](https://arxiv.org/abs/1707.06292)
+[B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System," Image and Vision Computing, 2019.](https://arxiv.org/abs/1707.06292)
 
 Markers (see `ref/marker generator` for reference code for marker generation):
 
