@@ -12,6 +12,11 @@ class EDInterface
 	EDLines* edLines = NULL;
 
 public:
+
+	~EDInterface() {
+		delete edgeMap;
+		delete edLines;
+	}
 	// runs EDPF and EDLines, keeps the results in memory
 	void runEDPFandEDLines(const cv::Mat &image);
 
