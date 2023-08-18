@@ -50,9 +50,9 @@ public:
 
   /// Destructor
   ~EDLines(){
-    delete lines;
-    delete x;
-    delete y;
+    delete[] lines;
+    delete[] x;
+    delete[] y;
   } //end-EDLines
 
   /// clear
@@ -62,7 +62,7 @@ public:
     capacity *= 2;
     LineSegment *newArr = new LineSegment[capacity];
     memcpy(newArr, lines, sizeof(LineSegment)*noLines);
-    delete lines;
+    delete[] lines;
     lines = newArr;
   } //end-expandCapacity
 

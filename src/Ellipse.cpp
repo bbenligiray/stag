@@ -525,6 +525,7 @@ customEllipse::customEllipse(pix* points, int noPnts)
 	delete[] d;
 	DeallocateMatrix(V, 7);
 	DeallocateMatrix(sol, 7);
+	free(fitPoints);
 }
 
 
